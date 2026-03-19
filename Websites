@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KRAANG Portfolio</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: blue;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: 40px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        #about {
+            background-color: darkcyan;
+            color: white;
+        }
+
+        #skills {
+            background-color: darkgray;
+            color: black;
+        }
+
+        #contact {
+            background-color: gold;
+            color: black;
+        }
+
+        footer {
+            background-color: darksalmon;
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 32px;
+            }
+            section {
+                padding: 40px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>KRAANG</h1>
+    <p>I build websites and solve real problems for businesses in Uganda.</p>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I am a new <b>Basic</b> Web Designer from Uganda. I create <b>Simple</b> websites that help local businesses go online and reach more customers. I focus on simplicity, performance, and usability.</p>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <p>HTML | CSS | Introductory JavaScript | Web Design | Responsive Design</p>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:krangdroidy@gmail.com">krangdroidy@gmail.com</a></p>
+    <p>Phone: <a href="tel:+256754125497">0754125497</a></p>
+    <p>WhatsApp: <a href="https://wa.me/256754125497" target="_blank">0754125497</a></p>
+</section>
+
+<footer>
+    <p>© 2026 Kraang | Built with HTML, CSS & JavaScript personally</p>
+</footer>
+
+<script>
+    // Optional JS: highlight nav link on scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 60;
+            if (pageYOffset >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
